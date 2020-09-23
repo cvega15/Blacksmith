@@ -18,8 +18,9 @@ body, html {
     50% {background-color: orangered;}
 }
 
-@keyframes grow {
-
+@keyframes ignite {
+    0% {transform: scaleY(0); bottom: 35px;}
+    100% {transform: scaleY(1); bottom: 95px;}
 }
 
 @keyframes daycycle {
@@ -65,11 +66,26 @@ body, html {
     height: 30%;
     background-color: rgb(40,32,30)
 }
-#ignite{
+
+#ignite-button{
     border-radius: 25px;
     width: 300px;
     height: 20%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    outline: none;
 }
+#ignite-button:hover{
+    background-color: gray;
+    cursor: pointer;
+
+}
+#ignite-button:active{
+    background-color: red;
+    transform: scaleX(.95) scaleY(.95);
+}
+
+
 #furnace{
     position: absolute;
     height: 250px;
@@ -103,6 +119,7 @@ body, html {
 
 
 #fire {
+    animation: ignite 0.3s;
     filter: drop-shadow(0 0 10px #b33d20);
     position: absolute;
     display: flex;

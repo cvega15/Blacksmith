@@ -26,8 +26,14 @@
             </div>
         </div>
         <div id="floor">
-            <button id='ignite'>toggle fire</button>
+            <button onClick="toggleFire()" id='ignite-button'>toggle fire</button>
         </div>
     </div>
+    <script>
+        function toggleFire() {
+            var fire = document.getElementById("fire");
+            fire.style.display = window.getComputedStyle(fire).display == "none" ? "flex" : "none";
+        }
+    </script>
 </body>
 </html>
